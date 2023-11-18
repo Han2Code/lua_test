@@ -228,14 +228,18 @@ function love.update(dt)
     --
     -- paddles can move no matter what state we're in
     --
-    -- player 1
-    if love.keyboard.isDown('w') then
-        player1.dy = -PADDLE_SPEED
-    elseif love.keyboard.isDown('s') then
-        player1.dy = PADDLE_SPEED
-    else
-        player1.dy = 0
-    end
+    -- player 1 update
+
+
+    player1.y = ball.y
+
+    -- if love.keyboard.isDown('w') then
+    --     player1.dy = -PADDLE_SPEED
+    -- elseif love.keyboard.isDown('s') then
+    --     player1.dy = PADDLE_SPEED
+    -- else
+    --     player1.dy = 0
+    -- end
 
     -- player 2
     if love.keyboard.isDown('up') then
@@ -336,7 +340,7 @@ function love.draw()
     ball:render()
 
     -- display FPS for debugging; simply comment out to remove
-    displayFPS()
+    -- displayFPS()
 
     -- end our drawing to push
     push:finish()
